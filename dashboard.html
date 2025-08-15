@@ -1,0 +1,13 @@
+{% extends 'base.html' %}
+{% block title %}Dashboard{% endblock %}
+{% block content %}
+<section class="card">
+    <h1>Dashboard</h1>
+    <p>Welcome, <strong>{{ user.username }}</strong>! You are logged in.</p>
+    <ul>
+        <li>Email: {{ user.email|default:"(not set)" }}</li>
+        <li>Date joined: {{ user.date_joined }}</li>
+        <li>Last login: {{ user.last_login }}</li>
+    </ul>
+</section>
+{% endblock %}

@@ -1,9 +1,9 @@
-from django.contrib import admin
-from django.urls import path, include
-from django.views.generic import RedirectView
+from django.urls import path
+from .views import register, dashboard, UserLoginView, UserLogoutView
 
 urlpatterns = [
-    path('admin/', admin.site.urls),
-    path('accounts/', include('accounts.urls')),
-    path('', RedirectView.as_view(pattern_name='dashboard', permanent=False)),
+    path('register/', register, name='register'),
+    path('login/', UserLoginView.as_view(), name='login'),
+    path('logout/', UserLogoutView.as_view(), name='logout'),
+    path('dashboard/', dashboard, name='dashboard'),
 ]
